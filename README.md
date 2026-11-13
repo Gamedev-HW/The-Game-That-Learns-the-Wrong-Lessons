@@ -12,3 +12,15 @@ Lior Shulman - ליאור שולמן
 
 # Formal Elements 
 https://github.com/Gamedev-HW/The-Game-That-Learns-the-Wrong-Lessons/blob/main/formal-elements-The-Game-That-Learns-the-Wrong-Lessons.md
+
+# Market Research 
+https://github.com/Gamedev-HW/The-Game-That-Learns-the-Wrong-Lessons/blob/main/Market_Research.md
+
+# Level Design
+https://github.com/Gamedev-HW/The-Game-That-Learns-the-Wrong-Lessons/blob/main/Level_Design.md
+
+# Game_README
+https://github.com/Gamedev-HW/The-Game-That-Learns-the-Wrong-Lessons/blob/main/Game_README.md
+
+# Itch.io Link
+https://gamedev-hw.itch.io/the-game-that-learns-the-wrong-lessons
