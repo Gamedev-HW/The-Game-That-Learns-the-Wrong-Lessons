@@ -113,29 +113,6 @@ All event subscriptions made in `OnEnable` are removed in `OnDisable`. `LabEvent
 - To add another exit condition, change `LabGameState` only; the HUD remains event-driven.
 - To improve the level visually, replace the primitive creation in `LabBootstrap` with prefabs and authored scenes, leaving the gameplay components intact.
 
-## WebGL build notes
-
-The playable WebGL version exposed two issues that did not appear in the same way in the Unity Editor:
-
-1. **Missing runtime shader:** Creating a material from a shader found only by name could result in a null shader reference in the build. The project now uses a `RuntimeMaterial` asset with a URP/Lit shader, loaded from `Assets/Resources/RuntimeMaterial.mat`. Keep that asset in the build.
-2. **Missing collider types:** Browser logs reported `Can't add component because class 'CapsuleCollider' doesn't exist!` and similar `SphereCollider` messages. The generated primitives need these collider types at runtime. Adding `Assets/link.xml` to preserve the physics types resolved the reported WebGL gameplay failure, even though Managed Stripping Level was already set to Minimal.
-
-Example `Assets/link.xml`:
-
-```xml
-<linker>
-  <assembly fullname="UnityEngine.PhysicsModule">
-    <type fullname="UnityEngine.BoxCollider" preserve="all"/>
-    <type fullname="UnityEngine.SphereCollider" preserve="all"/>
-    <type fullname="UnityEngine.CapsuleCollider" preserve="all"/>
-    <type fullname="UnityEngine.Rigidbody" preserve="all"/>
-    <type fullname="UnityEngine.CharacterController" preserve="all"/>
-  </assembly>
-</linker>
-```
-
-**Deployment:** Build for **Web/WebGL** in Unity, package the generated build files as required by itch.io, upload them as an HTML game, and test gameplay in the browser (movement, interaction, Mimo, box/plate, HUD, win, and restart). Keep `RuntimeMaterial.mat` and `link.xml` under version control.
-
 ## Links (fill in after publishing)
 
 - GitHub repository: https://github.com/Gamedev-HW/The-Game-That-Learns-the-Wrong-Lessons
