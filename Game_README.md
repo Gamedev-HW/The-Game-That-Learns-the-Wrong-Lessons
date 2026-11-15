@@ -16,8 +16,6 @@ This is a **single-level 3D greybox prototype** rather than the full four-level 
 3. Open the `LabPrototype` scene and ensure it is enabled under **Build Profiles → Scene List** (or **Build Settings → Scenes in Build**). For a fresh project, create the scene and add an active `LabBootstrap` GameObject.
 4. Ensure the scene contains **one active `LabBootstrap` component**, then press **Play**. It generates the laboratory, player, Mimo, gameplay camera, controls, UI, walls, box, pressure plate, and exit at runtime. Avoid keeping a second active scene camera.
 5. The level is presented from a fixed angled overhead **orthographic** camera; the player moves along the X/Z plane.
-6. Keep the `RuntimeMaterial` material asset in `Assets/Resources/RuntimeMaterial.mat`, with a **Universal Render Pipeline/Lit** shader, so the bootstrap can load it at runtime.
-7. Keep `Assets/link.xml` in the project to preserve dynamically used physics components in WebGL builds (see **WebGL build notes**).
 
 **Controls:** **WASD** to move; **E** to interact with the training button or push the physics box while facing it and within reach; **R** to restart. The player keeps facing the last nonzero movement direction when stationary. Interaction uses a short SphereCast in that saved facing direction, rather than activating everything within a broad radius.
 
